@@ -1,16 +1,12 @@
-import React, { useState } from 'react'
 
-export default function LikePost() {
+import Hoc from './Hoc'
+ function LikePost(props) {
 
-  const [likePostCounter, setPostCounter] = useState(0);
-
-  const handlePostCount = ()=>{
-    setPostCounter(likePostCounter+1);
-  }
 
   return (
     <div>
-      <button onClick={handlePostCount}>Like Post {likePostCounter}</button>
+      <button onClick={props.func}>Like Post {props.count}</button>
     </div>
   )
 }
+export default Hoc(LikePost)
